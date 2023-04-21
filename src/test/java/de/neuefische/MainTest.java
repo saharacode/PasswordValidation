@@ -76,5 +76,25 @@ class MainTest {
         assertFalse(actual);
     }
 
+    @Test
+    void containsBadWords_True() {
+        // given
+        String pw = "Passwort123456";
+        // when
+        boolean actual = Main.containsBadWords(pw);
+        // then
+        assertTrue(actual);
+    }
+
+    @Test
+    void containsBadWords_False() {
+        // given
+        String pw = "sdfghsfhdfTR4636364643";
+        // when
+        boolean actual = Main.containsBadWords(pw);
+        // then
+        assertFalse(actual);
+    }
+
 
 }

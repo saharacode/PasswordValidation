@@ -79,4 +79,14 @@ public class Main {
         return false;
 
     }
+
+    public static boolean containsBadWords(String pw) {
+        String[] badWords = {"Passwort123456", "johanndallmann", "norayasmeenkrause"};
+        for (int i = 0; i < badWords.length; i++){
+            if (pw.contains(badWords[i])){
+                return true;
+            }
+        }
+        return false;
+    }
 }
