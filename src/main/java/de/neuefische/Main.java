@@ -13,4 +13,9 @@ public class Main {
         }
         return valid;
     }
+
+    public static boolean containsInt(String pw){
+        boolean valid = false;
+        return valid;
+    }
 }
