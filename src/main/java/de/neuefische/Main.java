@@ -7,6 +7,10 @@ public class Main {
 
     public static boolean lengthPW(String pw){
         boolean valid = false;
+
+        if (pw.length()>10){
+            valid = true;
+        }
         return valid;
     }
 }
