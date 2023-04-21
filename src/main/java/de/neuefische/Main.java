@@ -1,7 +1,18 @@
 package de.neuefische;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        boolean pw_valid = false;
+
+        while(!pw_valid){
+            System.out.println("Please enter your password and press ENTER:");
+            String pw = scanner.nextLine();
+            pw_valid = checkPW(pw);
+        }
+        System.out.println("The chosen password is valid.");
+
 
     }
 
@@ -28,5 +39,16 @@ public class Main {
         }
 
         return valid;
+    }
+
+    public static boolean checkPW(String pw){
+        boolean valid_length = lengthPW(pw);
+        boolean valid_int = containsInt(pw);
+
+        if (valid_length && valid_int){
+            return true;
+        }
+        return false;
+
     }
 }
