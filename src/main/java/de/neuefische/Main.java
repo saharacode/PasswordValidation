@@ -16,6 +16,19 @@ public class Main {
 
     }
 
+    public static boolean checkPW(String pw){
+        boolean valid_length = lengthPW(pw);
+        boolean valid_int = containsInt(pw);
+        boolean valid_Upper = containsUpperCase(pw);
+        boolean valid_Lower = containsLowerCase(pw);
+
+        if (valid_length && valid_int && valid_Upper && valid_Lower){
+            return true;
+        }
+        return false;
+
+    }
+
     public static boolean lengthPW(String pw){
         boolean valid = false;
 
@@ -41,12 +54,27 @@ public class Main {
         return valid;
     }
 
-    public static boolean checkPW(String pw){
-        boolean valid_length = lengthPW(pw);
-        boolean valid_int = containsInt(pw);
 
-        if (valid_length && valid_int){
-            return true;
+
+    public static boolean containsUpperCase(String pw) {
+        char[] pw_char = pw.toCharArray();
+
+        for (int i = 0; i < pw_char.length; i++){
+            if (Character.isUpperCase(pw_char[i])){
+                return true;
+            }
+        }
+        return false;
+
+    }
+
+    public static boolean containsLowerCase(String pw) {
+        char[] pw_char = pw.toCharArray();
+
+        for (int i = 0; i < pw_char.length; i++){
+            if (Character.isLowerCase(pw_char[i])){
+                return true;
+            }
         }
         return false;
 
