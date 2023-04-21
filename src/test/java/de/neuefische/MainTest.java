@@ -96,5 +96,25 @@ class MainTest {
         assertFalse(actual);
     }
 
+    @Test
+    void checkPW_True() {
+        // given
+        String pw = "Jfde45fgr5467zt";
+        // when
+        boolean actual = Main.checkPW(pw);
+        // then
+        assertTrue(actual);
+    }
+
+    @Test
+    void checkPW_False() {
+        // given
+        String pw = "johann123456789";
+        // when
+        boolean actual = Main.checkPW(pw);
+        // then
+        assertFalse(actual);
+    }
+
 
 }

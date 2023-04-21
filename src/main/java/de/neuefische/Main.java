@@ -21,8 +21,9 @@ public class Main {
         boolean valid_int = containsInt(pw);
         boolean valid_Upper = containsUpperCase(pw);
         boolean valid_Lower = containsLowerCase(pw);
+        boolean valid_badWords = containsBadWords(pw);
 
-        if (valid_length && valid_int && valid_Upper && valid_Lower){
+        if (valid_length && valid_int && valid_Upper && valid_Lower && !valid_badWords){
             return true;
         }
         return false;
